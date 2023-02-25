@@ -1,0 +1,85 @@
+<div id="container">
+    
+    <div class="animate__animated animate__fadeInDown titulo">
+        <span class="title"> Nuevo Cliente </span>
+    </div>
+
+    <div class="animate__animated animate__fadeIn content">
+        <form id="form"
+        (ngSubmit)="guardar()" 
+        [formGroup]="miFormulario"
+        autocomplete="off">
+            
+            <div class="box">
+                <label> Nombre: </label>
+                <input type="text" 
+                formControlName="name"
+                placeholder="Nombre del cliente">
+
+            </div>
+            <span *ngIf="camposValidos('name')" class="error"> El nombre si es un campo obligatorio </span>
+            
+            <div class="box">
+                <label for=""> Número celular: </label>
+                <input type="number"
+                formControlName="number"
+                placeholder="Número del cliente">
+
+            </div>
+
+            <span *ngIf="camposValidos('number')" class="error"> Tiene que ser un número válido (minimo diez numeros)</span>
+        
+            <div class="box">
+                <label for=""> Correo electrónico: </label>
+                <input type="text"
+                formControlName="email"
+                placeholder="Correo del cliente (opcional)">
+                
+            </div>
+        
+            <div class="box">
+                <label for=""> Compañia/Lugar de trabajo: </label>
+                <input type="text"
+                formControlName="placeWork"
+                placeholder="Nombre de la empresa o lugar de trabajo del cliente (opcional)">
+                
+            </div>
+
+            <div class="box">
+                
+                <label for=""> Anotaciones: </label> <br>
+                <input type="text"
+                formControlName="desc"
+                placeholder="Agregue descripción y/o tareas por hacer (opcional)">
+            </div>
+        
+            <button class="btnSubmit" 
+            type="submit">
+            Guardar </button>
+        
+           </form>
+
+           
+           <h2> Estado de formulario: </h2>
+           <span> Valid </span>
+           <pre> {{miFormulario.valid}} </pre>
+           <hr>
+           <span> Value </span>
+           <pre> {{miFormulario.value | json}} </pre>
+           <hr>
+           <span> Touched </span>
+           <pre> {{miFormulario.touched}} </pre>
+
+           <span> Valores </span>
+           <pre> {{miFormulario.controls['name'].value}} </pre>
+
+    </div>
+
+
+        
+</div>
+
+
+   
+
+

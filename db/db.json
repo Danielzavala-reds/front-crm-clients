@@ -1,0 +1,28 @@
+
+{
+  "clientes": [
+    {
+      "id": "23132132132",
+      "name": "Daniel Zavala",
+      "number": "132123132",
+      "email": "correo@correo.com",
+      "placeWork": "gTac Polanco",
+      "desc": "Pendientes1"
+      
+    },
+    {
+      "id": "23132132132",
+      "name": "Alberto Zavala",
+      "number": "132123132",
+      "email": "correo@correo.com",
+      "placeWork": "gTac Polanco",
+      "desc": "Pendientes2"
+      
+    }
+  ]
+
+}
+
+
+
+  

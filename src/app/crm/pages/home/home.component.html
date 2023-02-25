@@ -1,0 +1,47 @@
+<div class="container ">
+    <header id="header">
+
+        <div class="content">
+    
+            <h2 routerLink="./inicio" > Manage your clients </h2>
+    
+           
+    
+            <i class="fi fi-rr-sign-in-alt"> Login </i>   
+        </div>
+    
+    </header>
+   
+   <div class="main">
+
+    <aside id="sidebar">
+       
+           <div id="content">
+       
+               <ul class="elements">
+                   <li> <i class="fi fi-rr-angle-right"></i> </li>
+                   <li> <i routerLink="./perfil" class="fi fi-rr-user"></i> </li>
+                   <li> <i routerLink="./nuevo-cliente" class="fi fi-rr-user-add"></i> </li>
+                   <li> <i routerLink="./clientes" class="fi fi-rr-users-alt"></i> </li>
+               </ul>
+       
+           </div>
+       </aside>
+
+      
+       <div class="center">
+           <router-outlet></router-outlet>
+
+       </div>
+        
+
+   </div>
+    
+
+   
+
+</div>
+
+
+
+

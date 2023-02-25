@@ -1,0 +1,88 @@
+$text-shadow: 2px 2px 5px rgba(0,0,0,0.69);
+
+
+#container{
+    // background: red;
+    width: 100%;
+    
+    
+
+    .content{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 40px;
+        // padding-left: 100px;
+        width: 100%;
+        
+
+        .fraction{
+            // background: red;
+            font-size: 30px;
+            padding-top: 100px;
+            transition: 300ms all;
+            width: 50%;
+            padding-left: 100px;
+            letter-spacing: 1px;
+
+        }
+
+        .fraction:hover{
+           text-shadow: $text-shadow;
+        }
+
+        .image{
+            // margin-left: 50px;
+            // margin-top: 100px;
+         img{
+                // padding-top: 50px;
+                width: 100%;
+            }
+            
+        }
+
+        
+    }
+}
+
+.contacto{
+ display: grid;
+ justify-content: center;  
+//  background: red;
+ width: 100%;
+ 
+    h2{
+        text-align: center;
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+
+        li{
+
+            a{
+                text-decoration: none;
+                font-size: 30px;
+                transition: 300ms all;
+            }
+
+            a:visited{
+                color: black;
+            }
+
+            a:hover{
+                color: rgb(209, 26, 26);
+                text-shadow: $text-shadow;
+            }
+
+            
+            
+        }
+    }
+}
+
+@keyframes jello{
+    
+}
