@@ -1,6 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CrmService } from '../../services/crm.service';
 import { Cliente } from '../../interfaces/interface';
+import { Router, ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
+
 
 @Component({
   selector: 'app-clientes',
@@ -10,14 +13,40 @@ import { Cliente } from '../../interfaces/interface';
 export class ClientesComponent implements OnInit{
 
   clientes: Cliente[] = [];
+
+  cliente!: Cliente;
   
-  constructor(private crmService: CrmService){}
+  constructor(private crmService: CrmService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.crmService.getCliente()
+    this.crmService.getClientes()
       .subscribe( clientes => {
+        // console.log(clientes);
         this.clientes = clientes;
        });
+
+  
   }
 
+  get hayRegistros():string {
+      if(this.clientes.length === 0){
+       return `Aún no hay registros`
+      }
+
+      return ``;
+  }
+
+  borrar(){
+
+    // if(this.cliente.id === undefined) {return}
+    this.activatedRoute.params
+      .pipe(
+        switchMap( ({id}) => this.crmService.borrarCliente(id) )
+      )
+      .subscribe(res => {
+        this.router.navigate(['/home/clientes'])
+      })
+  }
 }

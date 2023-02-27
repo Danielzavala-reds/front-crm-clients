@@ -5,6 +5,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 const routes: Routes = [
   {
@@ -12,10 +13,12 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {path: 'inicio', component: InicioComponent},
-      {path:'perfil', component: PerfilComponent},
+      {path: 'perfil', component: PerfilComponent},
       {path: 'nuevo-cliente', component: NuevoClienteComponent},
       {path: 'clientes', component: ClientesComponent},
-      {path: '**', redirectTo: 'nuevo-cliente'}
+      {path: 'editar/:id', component: NuevoClienteComponent},
+      {path: ':id', component: ClientesComponent},
+      {path: '**', redirectTo: 'inicio'}
     ]
   }
 ];

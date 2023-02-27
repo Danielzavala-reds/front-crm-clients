@@ -9,6 +9,7 @@ import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.compo
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientesInputComponent } from './components/clientes-input/clientes-input.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ClientesInputComponent } from './components/clientes-input/clientes-inp
     InicioComponent,
     NuevoClienteComponent,
     PerfilComponent,
-    ClientesInputComponent
+    ClientesInputComponent,
+    EditarComponent
   ],
   imports: [
     CommonModule,
