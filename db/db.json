@@ -1,44 +1,12 @@
 {
   "clientes": [
     {
-      "id": "23132132132",
-      "name": "Daniel Zavala",
-      "number": "132123132",
-      "email": "correo@correo.com",
-      "placeWork": "gTac Polanco",
-      "desc": "Pendientes1"
-    },
-    {
-      "name": "asdasd",
-      "number": 123123123,
-      "email": "",
+      "name": "Daniel",
+      "number": 214123132121,
+      "email": "drojaszavala8@gmail.com",
       "placeWork": "",
       "desc": "",
-      "id": "mtMhXu8"
-    },
-    {
-      "name": "qweqwe",
-      "number": 54132132,
-      "email": "",
-      "placeWork": "",
-      "desc": "",
-      "id": "5bkv8_9"
-    },
-    {
-      "name": "Alberto",
-      "number": 8112159330,
-      "email": "correo@correo.com",
-      "placeWork": "",
-      "desc": "",
-      "id": "4AlMOGv"
-    },
-    {
-      "name": "Zavala Ruiz",
-      "number": 213123123123123140,
-      "email": "",
-      "placeWork": "",
-      "desc": "",
-      "id": "f9XQbTk"
+      "id": 1
     }
   ]
 }

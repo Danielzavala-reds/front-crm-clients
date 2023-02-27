@@ -38,15 +38,5 @@ export class ClientesComponent implements OnInit{
       return ``;
   }
 
-  borrar(){
 
-    // if(this.cliente.id === undefined) {return}
-    this.activatedRoute.params
-      .pipe(
-        switchMap( ({id}) => this.crmService.borrarCliente(id) )
-      )
-      .subscribe(res => {
-        this.router.navigate(['/home/clientes'])
-      })
-  }
 }

@@ -17,10 +17,9 @@ export class CrmService {
       
     return this.http.post<Cliente>(`${this.baseUrl}/clientes`, cliente)
   }
-  actualizarCliente( name: string, number: string, email: string, placeWork: string, desc: string, id: string ): Observable<Cliente>{
-    const url = `${this.baseUrl}/clientes/${id}`;
-    const body = {name, number, email, placeWork, desc, id }
-     return this.http.put<Cliente>(url, body);
+  actualizarCliente( cliente: Cliente ): Observable<Cliente>{
+    
+     return this.http.put<Cliente>(`${this.baseUrl}/clientes/${cliente.id}`, cliente);
   }
 
   borrarCliente( id: string ): Observable<any>{
