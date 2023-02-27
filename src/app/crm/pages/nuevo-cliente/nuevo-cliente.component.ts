@@ -34,14 +34,14 @@ export class NuevoClienteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if( !this.route.url.includes('home/editar') ) {
+    /* Validacioón para confirmar que estamos en la ruta para editar algún registro y no nos marque error 'undefined' en la ruta */
+    if( !this.route.url.includes(`home/editar`) ) {
       return;
     }
 
     this.activatedRoute.params
       .pipe(
         switchMap( ({ id }) => this.crmService.clientePorId(id)),
-        
       )
       .subscribe((cliente: Cliente) => {
         /* Metodo para que los valores al momento de editar el cliente se muestren */
@@ -64,21 +64,20 @@ export class NuevoClienteComponent implements OnInit {
       return;
     }
 
-    if (this.clienteId) {
+  if (this.clienteId) {
       // Actualizamos cliente
-       this.crmService.actualizarCliente( this.cliente )
+       this.crmService.actualizarCliente( this.miFormulario.value )
         .subscribe(res => console.log('Actualizado', res))
     } else {
-
-      // // Crear cliente
-      this.crmService.agregarCliente(this.miFormulario.value)
-        .subscribe(res => {
-          console.log(res);
-        })
-      // // console.log(this.miFormulario.value);
-    this.miFormulario.reset();
-    }
-
+     // // Crear cliente
+     this.crmService.agregarCliente(this.miFormulario.value)
+       .subscribe(res => {
+         console.log(res);
+    })
+    // // console.log(this.miFormulario.value);
+  }
+  
+  this.miFormulario.reset();
 
   };
 

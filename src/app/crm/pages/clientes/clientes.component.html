@@ -19,9 +19,9 @@
          <tr *ngFor="let cliente of clientes"> 
             <td> {{cliente.name}}   </td>
             <td> {{cliente.number}} </td>
-            <td> {{cliente.email}} </td>
-            <td> {{cliente.placeWork}} </td>
-            <td> {{cliente.desc}}  </td>
+            <td> {{ (cliente.email) ? cliente.email : 'N/A' }} </td>
+            <td> {{ (cliente.placeWork) ? cliente.placeWork : 'N/A' }} </td>
+            <td> {{(cliente.desc) ? cliente.desc : 'N/A' }} </td>
             <td> <button [routerLink]="['/home/editar', cliente.id]" > Editar </button>  </td>
            
         </tr>
