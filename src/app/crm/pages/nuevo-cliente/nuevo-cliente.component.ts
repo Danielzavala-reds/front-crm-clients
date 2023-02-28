@@ -15,7 +15,7 @@ export class NuevoClienteComponent implements OnInit {
   // miFormulario: FormGroup
   cliente!: Cliente;
 
-  // Guardamos el id del jugador
+  // Guardamos el id del cliente
   clienteId!: string;
 
   miFormulario: FormGroup = this.formBuilder.group({
@@ -24,6 +24,7 @@ export class NuevoClienteComponent implements OnInit {
     email: ['', [Validators.email]],
     placeWork: ['', Validators.minLength(3)],
     desc: ['', Validators.minLength(3)],
+    id: [''],
   });
 
   constructor(private formBuilder: FormBuilder,
@@ -64,25 +65,25 @@ export class NuevoClienteComponent implements OnInit {
       return;
     }
 
-  if (this.clienteId) {
+    
+    if (this.clienteId) {
       // Actualizamos cliente
-       this.crmService.actualizarCliente( this.miFormulario.value )
+      this.crmService.actualizarCliente( this.miFormulario.value )
         .subscribe(res => console.log('Actualizado', res))
     } else {
      // // Crear cliente
      this.crmService.agregarCliente(this.miFormulario.value)
        .subscribe(res => {
          console.log(res);
+         this.miFormulario.reset();
     })
     // // console.log(this.miFormulario.value);
   }
   
-  this.miFormulario.reset();
 
   };
 
   borrar(){
-
     this.activatedRoute.params
       .pipe(
         switchMap( ({id}) => this.crmService.borrarCliente(id) ),

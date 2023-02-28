@@ -1,7 +1,7 @@
 <div id="container">
     
     <div class="animate__animated animate__fadeInDown titulo">
-        <span class="title"> Nuevo Cliente </span>
+        <span class="title"> {{ (clienteId) ? 'Actualizar cliente' : 'Nuevo Cliente' }} </span>
     </div>
 
     <div class="animate__animated animate__fadeIn content">
@@ -55,10 +55,11 @@
         
             <button class="btnSubmit" 
             type="submit">
-            Guardar </button>
+            {{ (clienteId) ? 'Actualizar' : 'Guardar' }} </button>
             
-            <button (click)="borrar()"> Borrar registro </button>  
-        
+            <button class="btnSubmit" *ngIf="clienteId" (click)="borrar()"> Borrar registro </button>  
+            
+           
            </form>
 
 
