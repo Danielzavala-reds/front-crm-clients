@@ -54,10 +54,14 @@
             </div>
         
             <button class="btnSubmit" 
-            type="submit">
+            type="submit"
+            >
             {{ (clienteId) ? 'Actualizar' : 'Guardar' }} </button>
             
-            <button class="btnSubmit" *ngIf="clienteId" (click)="borrar()"> Borrar registro </button>  
+            <button class="btnSubmit"
+             *ngIf="clienteId" 
+             (click)="borrar()"> 
+             Borrar registro </button>  
             
            
            </form>

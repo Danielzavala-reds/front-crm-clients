@@ -1,0 +1,47 @@
+
+<form  (ngSubmit)="buscar()" autocomplete="off">
+
+    <input class="search" 
+    type="text"
+    name="termino" 
+    [(ngModel)]="termino"
+    placeholder="Busque algún registro...">
+
+</form>
+
+<hr>
+
+<div *ngIf="termino.includes('')" class="alert alert-danger" >
+    No se encontro ningún registro con los terminos "{{termino}}"
+</div>
+
+<div class="row">
+
+    <div class="col">
+        <table class="table table-hover" >
+            <thead>
+                <tr>
+                    <th> Nombre del cliente </th>
+                    <th> Numero de celular </th>
+                    <th> Correo electrónico </th>
+                    <th>  </th>
+                    <th>  </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>nombre</td>
+                        <td>numero</td>
+                        <td>correo</td>
+                    </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+
+

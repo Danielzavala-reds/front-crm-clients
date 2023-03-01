@@ -1,20 +1,36 @@
 {
   "clientes": [
     {
-      "name": "Daniel",
-      "number": 68419841856465,
-      "email": "",
-      "placeWork": "",
-      "desc": "Descripcion 2",
+      "name": "Daniel Alberto ",
+      "number": 8112159330,
+      "email": "drojaszavala8@gmail.com",
+      "placeWork": "Majorel",
+      "desc": "Pendientes por hacer: Hacer la funcionalidad del buscador",
       "id": 1
     },
     {
-      "name": "Daniel Rojas Zavala Ruiz",
-      "number": 555135841489131,
-      "email": "drojaszavala8@gmail.com",
-      "placeWork": "Majorel",
-      "desc": "Pinche vato porque trabajaste en callcenter alv",
-      "id": 2
+      "name": "Yanet Rojas Zavala",
+      "number": 5512369871,
+      "email": "yanet@correo.com",
+      "placeWork": "",
+      "desc": "",
+      "id": 3
+    },
+    {
+      "name": "Cintia Rojas Zavala",
+      "number": 81546878756,
+      "email": "cintia@correo.com",
+      "placeWork": "",
+      "desc": "",
+      "id": 4
+    },
+    {
+      "name": "Brenda Rojas Rea",
+      "number": 88845621685,
+      "email": "brenda@correo.com",
+      "placeWork": "Starbucks",
+      "desc": "",
+      "id": 7
     }
   ]
 }

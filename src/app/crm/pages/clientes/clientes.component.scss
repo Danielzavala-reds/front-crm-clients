@@ -12,28 +12,7 @@
     .flex-input{
         display: flex;
         justify-content: center;
-        .search{
-            height: 30px;
-            width: 600px;
-            
-            // margin-left: -70px;
-            // margin-right: 30px;
-            // align-self: center;
-            // justify-self: center;
-            
-            outline-style: none;
-            border: none;
-            border-radius: 7px;
-            padding-left: 10px;
-    
-            transition: 300ms all;
-        }
-    
-    
-        .search:focus{
-            box-shadow: inset 3px 3px 16px 1px rgba(130, 128, 128, 0.64);
-            outline-style: none;
-        }
+        
     }
 
     

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { CrmRoutingModule } from './crm-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -7,9 +8,9 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ClientesInputComponent } from './components/clientes-input/clientes-input.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { EditarComponent } from './pages/editar/editar.component';
     InicioComponent,
     NuevoClienteComponent,
     PerfilComponent,
-    ClientesInputComponent,
-    EditarComponent
+    EditarComponent,
+    SearchInputComponent
   ],
   imports: [
     CommonModule,
     CrmRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+    
   ]
 })
 export class CrmModule { }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Cliente } from '../interfaces/interface';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class CrmService {
   
   private baseUrl: string = 'http://localhost:3000'
-
+  
   constructor( private http: HttpClient ) { }
   
   agregarCliente( cliente: Cliente ): Observable<Cliente>{
@@ -26,6 +27,17 @@ export class CrmService {
 
     return this.http.delete<any>(`${this.baseUrl}/clientes/${id}` )
   }
+  
+  buscarPorTermino(termino: string): Observable<Cliente[]>{
+
+    const url = `${this.baseUrl}/clientes?q=${termino}&_limit=5`
+    
+    return this.http.get<Cliente[]>(url)
+      .pipe(
+        catchError( err => of( [] ))
+      )
+      
+  }
 
   clientePorId(id: string): Observable<Cliente>{
     return this.http.get<Cliente>(`${this.baseUrl}/clientes/${id}`)
@@ -33,4 +45,5 @@ export class CrmService {
   getClientes(): Observable<Cliente[]>{
     return this.http.get<Cliente[]>(`${this.baseUrl}/clientes`)
   }
+
 }

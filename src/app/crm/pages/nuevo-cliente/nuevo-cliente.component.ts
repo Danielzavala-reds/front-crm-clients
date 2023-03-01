@@ -3,7 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from '../../interfaces/interface';
 import { CrmService } from '../../services/crm.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap, tap } from 'rxjs';
+import { switchMap } from 'rxjs';
+
+
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-nuevo-cliente',
@@ -19,8 +23,8 @@ export class NuevoClienteComponent implements OnInit {
   clienteId!: string;
 
   miFormulario: FormGroup = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(3)],],
-    number: ['', [Validators.required, Validators.minLength(10)]],
+    name: ['qweqweqeqwe', [Validators.required, Validators.minLength(3)],],
+    number: ['123132131231231', [Validators.required, Validators.minLength(10)]],
     email: ['', [Validators.email]],
     placeWork: ['', Validators.minLength(3)],
     desc: ['', Validators.minLength(3)],
@@ -69,11 +73,22 @@ export class NuevoClienteComponent implements OnInit {
     if (this.clienteId) {
       // Actualizamos cliente
       this.crmService.actualizarCliente( this.miFormulario.value )
-        .subscribe(res => console.log('Actualizado', res))
+        .subscribe(res => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Actualizado',
+            text: 'Registro actualizado con exito',
+          })
+        })
     } else {
      // // Crear cliente
      this.crmService.agregarCliente(this.miFormulario.value)
        .subscribe(res => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Guardado',
+          text: 'Registro guardado con exito',
+        })
          console.log(res);
          this.miFormulario.reset();
     })
@@ -84,12 +99,9 @@ export class NuevoClienteComponent implements OnInit {
   };
 
   borrar(){
-    this.activatedRoute.params
-      .pipe(
-        switchMap( ({id}) => this.crmService.borrarCliente(id) ),
-      )
-      .subscribe(res => {
-        this.route.navigate(['/home/clientes'])
+    this.crmService.borrarCliente(this.clienteId)
+      .subscribe( cliente => {
+        this.route.navigate(['home/clientes'])
       })
   }
 
