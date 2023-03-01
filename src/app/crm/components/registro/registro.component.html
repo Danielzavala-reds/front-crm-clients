@@ -1,0 +1,19 @@
+<table id="table" class="animate__animated animate__fadeIn animate__fast">
+    <tr>
+        <th> Nombre del cliente </th>
+        <th> Número de celular  </th>
+        <th> Correo electrónico </th>
+        <th> Compañia/Lugar de trabajo </th>
+        <th> Anotaciones </th>
+    </tr>
+
+     <tr > 
+        <td> {{cliente.name}}   </td>
+        <td> {{cliente.number}} </td>
+        <td> {{ (cliente.email) ? cliente.email : 'N/A' }} </td>
+        <td> {{ (cliente.placeWork) ? cliente.placeWork : 'N/A' }} </td>
+        <td> {{(cliente.desc) ? cliente.desc : 'N/A' }} </td>
+        <td> <button [routerLink]="['/home/editar', cliente.id]" > Editar </button>  </td>
+       
+    </tr>
+</table>

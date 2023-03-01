@@ -16,9 +16,7 @@ export class ClientesComponent implements OnInit{
 
   cliente!: Cliente;
   
-  constructor(private crmService: CrmService,
-              private router: Router,
-              private activatedRoute: ActivatedRoute){}
+  constructor(private crmService: CrmService){}
 
   ngOnInit(): void {
     this.crmService.getClientes()
@@ -35,7 +33,7 @@ export class ClientesComponent implements OnInit{
        return `Aún no hay registros`
       }
 
-      return ``;
+      return '';
   }
 
 

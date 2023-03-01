@@ -10,6 +10,8 @@ import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.compo
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
+import { MaterialModule } from './material/material/material.module';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 
@@ -21,13 +23,15 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     NuevoClienteComponent,
     PerfilComponent,
     EditarComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    RegistroComponent
   ],
   imports: [
     CommonModule,
     CrmRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
     
   ]
 })

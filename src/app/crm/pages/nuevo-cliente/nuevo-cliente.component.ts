@@ -23,8 +23,8 @@ export class NuevoClienteComponent implements OnInit {
   clienteId!: string;
 
   miFormulario: FormGroup = this.formBuilder.group({
-    name: ['qweqweqeqwe', [Validators.required, Validators.minLength(3)],],
-    number: ['123132131231231', [Validators.required, Validators.minLength(10)]],
+    name: ['Prueba 1', [Validators.required, Validators.minLength(3)],],
+    number: ['12345678910', [Validators.required, Validators.minLength(10)]],
     email: ['', [Validators.email]],
     placeWork: ['', Validators.minLength(3)],
     desc: ['', Validators.minLength(3)],
