@@ -30,7 +30,7 @@ export class ClientesComponent implements OnInit{
 
   get hayRegistros():string {
       if(this.clientes.length === 0){
-       return `Aún no hay registros`
+       return `No hay registros`
       }
 
       return '';
