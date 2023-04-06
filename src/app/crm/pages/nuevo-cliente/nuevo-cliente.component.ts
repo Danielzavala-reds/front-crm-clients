@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from '../../interfaces/interface';
 import { CrmService } from '../../services/crm.service';
@@ -7,8 +7,7 @@ import { switchMap } from 'rxjs';
 
 
 import Swal from 'sweetalert2';
-
-
+    
 @Component({
   selector: 'app-nuevo-cliente',
   templateUrl: './nuevo-cliente.component.html',
@@ -27,7 +26,7 @@ export class NuevoClienteComponent implements OnInit {
     number: ['12345678910', [Validators.required, Validators.minLength(10)]],
     email: ['', [Validators.email]],
     placeWork: ['', Validators.minLength(3)],
-    desc: ['', Validators.minLength(3)],
+    description: ['', Validators.minLength(3)],
     id: [''],
   });
 
@@ -72,13 +71,14 @@ export class NuevoClienteComponent implements OnInit {
     
     if (this.clienteId) {
       // Actualizamos cliente
-      this.crmService.actualizarCliente( this.miFormulario.value )
+      this.crmService.actualizarCliente( this.miFormulario.value, this.clienteId )
         .subscribe(res => {
           Swal.fire({
             icon: 'success',
             title: 'Actualizado',
             text: 'Registro actualizado con exito',
           })
+          this.route.navigate(['/home/clientes'])
         })
     } else {
      // // Crear cliente
@@ -97,12 +97,5 @@ export class NuevoClienteComponent implements OnInit {
   
 
   };
-
-  borrar(){
-    this.crmService.borrarCliente(this.clienteId)
-      .subscribe( cliente => {
-        this.route.navigate(['home/clientes'])
-      })
-  }
-
+  
 };

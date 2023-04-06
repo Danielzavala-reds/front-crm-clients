@@ -1,0 +1,16 @@
+#table {
+  width: 90%;
+  text-align: center;
+}
+#table tr th {
+  padding-bottom: 10px;
+}
+#table tr .option {
+  padding-left: 40px;
+}
+#table tr td {
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}/*# sourceMappingURL=registro.component.css.map */

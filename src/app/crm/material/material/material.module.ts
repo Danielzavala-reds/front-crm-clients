@@ -6,6 +6,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule  } from "@angular/material/input";
 
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
+
 
 @NgModule({
   declarations: [],
@@ -15,7 +19,9 @@ import {MatInputModule  } from "@angular/material/input";
   exports: [
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class MaterialModule { }

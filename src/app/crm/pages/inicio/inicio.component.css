@@ -1,0 +1,52 @@
+#container {
+  width: 100%;
+}
+#container .content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+#container .content .fraction {
+  font-size: 30px;
+  padding-top: 100px;
+  transition: 300ms all;
+  width: 50%;
+  padding-left: 100px;
+  letter-spacing: 1px;
+}
+#container .content .fraction:hover {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.69);
+}
+#container .content .image img {
+  width: 100%;
+}
+
+.contacto {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+.contacto h2 {
+  text-align: center;
+}
+.contacto ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.contacto ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  transition: 300ms all;
+}
+.contacto ul li a:visited {
+  color: black;
+}
+.contacto ul li a:hover {
+  color: rgb(209, 26, 26);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.69);
+}
+
+@keyframes jello {}/*# sourceMappingURL=inicio.component.css.map */

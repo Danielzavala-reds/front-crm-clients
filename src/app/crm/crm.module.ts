@@ -8,10 +8,11 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
-import { EditarComponent } from './pages/editar/editar.component';
+
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { MaterialModule } from './material/material/material.module';
 import { RegistroComponent } from './components/registro/registro.component';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 
@@ -22,9 +23,9 @@ import { RegistroComponent } from './components/registro/registro.component';
     InicioComponent,
     NuevoClienteComponent,
     PerfilComponent,
-    EditarComponent,
     SearchInputComponent,
-    RegistroComponent
+    RegistroComponent,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule,

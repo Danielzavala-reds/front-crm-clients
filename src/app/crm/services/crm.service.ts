@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CrmService {
 
-  private baseUrl: string = 'http://localhost:3000'
+  private baseUrl: string = 'http://localhost:8000/api'
 
   constructor(private http: HttpClient) { }
 
@@ -18,9 +18,9 @@ export class CrmService {
 
     return this.http.post<Cliente>(`${this.baseUrl}/clientes`, cliente)
   }
-  actualizarCliente(cliente: Cliente): Observable<Cliente> {
+  actualizarCliente(cliente: Cliente, id: string): Observable<Cliente> {
 
-    return this.http.put<Cliente>(`${this.baseUrl}/clientes/${cliente.id}`, cliente);
+    return this.http.put<Cliente>(`${this.baseUrl}/clientes/${id}`, cliente);
   }
 
   borrarCliente(id: string): Observable<any> {
@@ -37,6 +37,7 @@ export class CrmService {
   clientePorId(id: string): Observable<Cliente> {
     return this.http.get<Cliente>(`${this.baseUrl}/clientes/${id}`)
   }
+  
   getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${this.baseUrl}/clientes`)
   }

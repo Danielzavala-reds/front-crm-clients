@@ -14,6 +14,7 @@
             <th> Correo electrónico </th>
             <th> Compañia/Lugar de trabajo </th>
             <th> Anotaciones </th>
+            <th> Acciones </th>
         </tr>
     
          <tr *ngFor="let cliente of clientes"> 
@@ -21,8 +22,8 @@
             <td> {{cliente.number}} </td>
             <td> {{ (cliente.email) ? cliente.email : 'N/A' }} </td>
             <td> {{ (cliente.placeWork) ? cliente.placeWork : 'N/A' }} </td>
-            <td> {{(cliente.desc) ? cliente.desc : 'N/A' }} </td>
-            <td> <button [routerLink]="['/home/editar', cliente.id]" > Editar </button>  </td>
+            <td> {{(cliente.description) ? cliente.description : 'N/A' }} </td>
+            <td> <button mat-button [routerLink]="['/home/editar', cliente.id]" > Editar </button> <button mat-button (click)="borrar(cliente.id!)"> Eliminar </button> </td>
            
         </tr>
     </table>

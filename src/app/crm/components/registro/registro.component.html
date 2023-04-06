@@ -12,7 +12,7 @@
         <td> {{cliente.number}} </td>
         <td> {{ (cliente.email) ? cliente.email : 'N/A' }} </td>
         <td> {{ (cliente.placeWork) ? cliente.placeWork : 'N/A' }} </td>
-        <td> {{(cliente.desc) ? cliente.desc : 'N/A' }} </td>
+        <td> {{(cliente.description) ? cliente.description : 'N/A' }} </td>
         <td> <button [routerLink]="['/home/editar', cliente.id]" > Editar </button>  </td>
        
     </tr>

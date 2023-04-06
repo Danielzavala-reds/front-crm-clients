@@ -1,0 +1,16 @@
+.form-search {
+  width: 100%;
+}
+
+.container {
+  margin: 0px auto;
+  text-align: center;
+}
+.container h2 {
+  text-align: center;
+}
+
+.example-full-width {
+  width: 867px;
+  display: flex;
+}/*# sourceMappingURL=search-input.component.css.map */

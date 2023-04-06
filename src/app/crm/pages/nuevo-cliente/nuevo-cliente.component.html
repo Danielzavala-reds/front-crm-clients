@@ -49,21 +49,16 @@
                 
                 <label for=""> Anotaciones: </label> <br>
                 <input type="text"
-                formControlName="desc"
+                formControlName="description"
                 placeholder="Agregue descripción y/o tareas por hacer (opcional)">
             </div>
         
             <button class="btnSubmit" 
             type="submit"
-            >
+            mat-button>
+
             {{ (clienteId) ? 'Actualizar' : 'Guardar' }} </button>
             
-            <button class="btnSubmit"
-             *ngIf="clienteId" 
-             (click)="borrar()"> 
-             Borrar registro </button>  
-            
-           
            </form>
 
 
